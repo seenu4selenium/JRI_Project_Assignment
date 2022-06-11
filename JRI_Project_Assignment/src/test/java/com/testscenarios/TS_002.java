@@ -18,7 +18,7 @@ import com.utilities.CommonFunctions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import objectRepository.Locators;
 
-public class ClassTemplate extends CommonFunctions {
+public class TS_002 extends CommonFunctions {
 
 	Locators loc = new Locators();
 
@@ -37,12 +37,20 @@ public class ClassTemplate extends CommonFunctions {
 	}
 
 	@Test
-	public void f() throws Exception {
+	public void TC_011() throws Exception {
 		FileInputStream propertyFilePath = new FileInputStream("./src/test/resources/testdata/inputs.properties");
 		// load the proprty file data to reference
 		prop.load(propertyFilePath);
 
 	}
+	@Test
+	public void TC_012() throws Exception {
+		FileInputStream propertyFilePath = new FileInputStream("./src/test/resources/testdata/inputs.properties");
+		// load the proprty file data to reference
+		prop.load(propertyFilePath);
+
+	}
+
 
 	// This method will execute each and every @test method execution done
 	@AfterMethod

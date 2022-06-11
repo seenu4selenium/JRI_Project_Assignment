@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.utilities.CommonFunctions;
@@ -17,7 +18,7 @@ public class JRI_TS001_Create_JRI_Account extends CommonFunctions {
 	// classname refName = new classname();
 	Locators loc = new Locators();
 
-	//Invoke the JRI Home page
+	// Invoke the JRI Home page
 	@Test(description = "Invoke the JRI Home page")
 	public void TC_001() {
 		openChromeBrowser();
@@ -81,6 +82,13 @@ public class JRI_TS001_Create_JRI_Account extends CommonFunctions {
 		validateWebElement(getTextByAnyLocator(loc.CreateNewAccountPage_Terms_ErroeMSG),
 				"Please agree to the terms & conditions");
 
+	}
+
+	@AfterMethod
+	public void takescreenshotOfEachMethod() throws Exception {
+		// Here type class name as screenshot file name
+		takescreenshotWithTimeStamp("ClassName");
+		driver.quit();
 	}
 
 }
